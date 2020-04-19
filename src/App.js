@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BounceLoader, BeatLoader, BarLoader } from 'react-spinners';
+import { css } from '@emotion/core';
 import './App.css';
+
+const loaderCSS= css`
+margine-top: 25px;
+margine-bottom: 25px;
+`
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      < BounceLoader css= {loaderCSS} size= {24} color= 'red' loading />
+      <BarLoader css= {loaderCSS} size= {48} color= 'orange' loading />
+      <BeatLoader css= {loaderCSS} size= {72} color= 'maroon' loading />
     </div>
   );
 }
